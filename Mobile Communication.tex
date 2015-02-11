@@ -1,0 +1,155 @@
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% Formelsammlung von LaTeX4EI									
+%
+% @encode: 	UTF-8, tabwidth = 4, newline = LF
+% @author:	Emanuel Regnath
+%
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+
+% .:: Laden der LaTeX4EI Formelsammlungsvorlage
+\documentclass[fs, footer]{latex4ei}
+
+
+%---------------------------------------%
+%			Mobile Communication		%
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+% DOCUMENT_BEGIN ===============================================================
+\begin{document}
+
+% Split in 4 Columns ===========================================================
+\begin{multicols*}{4}
+
+% TITLE ========================================================================
+\fstitle{Mobile\\ Communication}
+
+
+% SECTION ====================================================================================
+\section{Overview}
+% ============================================================================================
+
+LOS = Line of Sight: Path with high Amplitude
+
+\sectionbox{
+
+Broadcast: Same message to all clients\\
+Unicast: individual data\\
+
+unidirectional or bidirectionaal communication.
+
+service quality: data rate, delay, error rate\\
+
+ALOHA System: User sends packet whenever the data source makes them available.\\
+Carrier-Sense Multiple-Access: If channel is busy, the user waits a random time until its transmission
+
+}
+	\subsection{UMTS}
+	Base station $\SI{5}{\watt}$ TX-Power\\
+	Mobile $\SI{0.125}{\watt}$ TX-Power
+
+	\subsection{Cellular Principle}
+	macro cells (global), micro cells (local), pico cells (small room)\\
+	Typical cluster size in GSM is 7
+
+
+	\subsection{Distorsions within the channel}
+	\begin{description}
+		\item[Shadowing („Abschattung“)] because of large obstacles
+		\item[Reflection („Reflexion“)] on large on areas
+		\item[Refraction (“Brechung”)] on surfaces \\ (change of medium $\ra$ change of speed)
+		\item[Scattering („Streuung“)] at small obstacles
+		\item[Diffraction („Beugung“)] on sharp edges
+		\item[Interference]
+	\end{description}
+
+	Noise: radio noise in the air, thermal noise of wires,
+
+
+	Friis free space equation:\\
+	$P_{\ir RX}(d) = \frac{P_{\ir TX} G_{\ir RX} G_{\ir TX} \lambda^2}{(4 \pi d)^2 L}$\\
+
+
+
+	Path loss: $L_p(d) = L_{p0} + 10 \alpha \log_{10}(d)$
+	
+	\subsection{Signal Transmission}
+	LowPASS Equivalent: $s(t) = A(t) \cdot e^{\i \varphi (t)}$\\
+	BandPASS Signal: $u(t) = \Re\{s(t) e^{\j 2\pi f t} \}$ \qquad f:Carrierfreq.\\
+	Transmitted Signal: $u(t) = A(t) \cos(2\pi ft + \phi(t))$\\
+	Received Signal: $r(t) = \frac{\alpha(\theta,\Psi,f) \cos(2\pi f(t - \frac{d}{c}))}{d}$\\
+
+	
+	Doppler Shift $D_f = -f \frac{v}{c} \cos(\gamma)$\\
+
+
+	\begin{tabular}{l|l}
+		static & moving\\
+		diffrent delays of paths & diffrent doppler frequencies\\
+		frequency selective & time selective\\[0.5em]
+		Delay spread & Doppler spread:\\
+		$T_d = \tau_{\max} - \tau_{\min}$ & $f_{\ir DS} = f_{\ir D,max} - f_{\ir D,min}$\\[0.5em]
+		Coherence Bandwidth: & Coherence Time:\\
+		
+	
+	
+	\end{tabular}
+
+
+	\subsection{Parameters of a Channel}
+	\begin{tabular}{lll}
+	carrier frequency & $f_{\ir c}$ & $1 - \SI{2}{\giga\hertz}$ \\
+	used bandwidth & $W = \frac{1}{T_{\ir T}}$ & 0.2 – 10 MHz\\
+	distance between transmitter and receiver & $D$ & $\SI{1}{\kilo\meter}$\\
+	Velocity of mobile & $v$ & $\SI{50}{\kilo\meter\per\hour}$\\
+	Time-scale for change of path amplitude dcor/v >3 s\\
+	(shadowing, path loss) \\
+	Time-scale for a path to move over a tap $T_{\ir S} \cdot \frac{v}{c}$ & $>\SI{3}{second}$\\
+	maximum Doppler shift for one path fD=fcv/c 50 – 100 Hz\\
+	Doppler spread of paths corresponding to one tap fDS 100 – 200 Hz\\
+	Time-scale for change of path phase 1/fD 10 – 20 ms\\
+	Coherence time Tcoh= 1/fDS 5 – 10 ms\\
+	Delay spread & $T_d$ & $\SI{1}{\micro\second}$\\
+	Coherence bandwidth fcoh=1/Td 1 MHz\\
+	\end{tabular}
+	
+	
+
+	\subsection{Deterministic LTV Channel Model}
+	% \tau = Delay
+	Channel Response: $r(t) = \int\limits_{-\infty}^\infty s(t-\tau) h(\tau,t) \diff \tau$\\
+	Ellipsoid Model: Paths with same delay are grouped together.
+
+
+
+	\subsection{Modulation Techniques}
+	Amplitude Shift Keying (ASK, AM)\\
+	Frequency Shift Keying (FSK, FM)\\
+	Phase Shift Kesying (PSK, PM)\\
+	
+	
+
+
+	\subsection{Multiple Access Techniques}
+	FDMA
+	TDMA
+	CDMA
+
+
+	\begin{tabular}{ll}
+	g & $\si{\dB}$\\
+	1 & +0\\
+	1.25 & +1\\
+	1.6 & +2\\
+	2 & +3\\
+	\end{tabular}
+
+% Ende der Spalten
+\end{multicols*}
+
+% Dokumentende
+% ======================================================================
+\end{document}
+
+% ToDos:
+
